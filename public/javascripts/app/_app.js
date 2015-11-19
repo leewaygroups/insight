@@ -1,0 +1,1 @@
+window.app.conferenceApp = angular.module("conferenceApp", ["ui.router"]);

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="conferenceApp">
+<head>
+  <link rel="stylesheet" href="stylesheets/main.css">
+  <% include partials/head.ejs %>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <% include partials/main.ejs %>
+    </div>
+  </div>
+  <% include partials/footer.ejs %>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <script src="/javascripts/modules/security.js"></script>
+    <script src="/javascripts/app/_app.js"></script>
+    <script src="/javascripts/app/app.js"></script>
+    <script src="/javascripts/app/login/loginController.js"></script>
+    <script src="/javascripts/app/admin/adminController.js"></script>
+    <script src="/javascripts/app/home/homeController.js"></script>
+    <script src="/javascripts/app/register/registerController.js"></script>
+</body>
+
+</html>
