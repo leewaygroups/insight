@@ -1,11 +1,6 @@
 window.app.conferenceApp.config(
 	function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
 
-		$locationProvider.html5Mode({
-			enabled: true,
-			requireBase: false
-		});
-
 		$urlRouterProvider.otherwise('/home');
 
 		$stateProvider

@@ -18,15 +18,15 @@ function registerCtrl($scope, $rootScope, $http, $location, $state) {
 
 	this.register = function (user) {
 
-		$http.post('/signup', { email: user.email, password: user.password })
+		$http.post('/signup', user)
 			.then(
 				function (response) {
-					window.currentUser = response;
+					// $state.go('login');
+					$location.url('/login');
 				},
 				function (error) {
 					console.log(error.status + " : " + error.data);
 				}
 				);
-
 	};
 }

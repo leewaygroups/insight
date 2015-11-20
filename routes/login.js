@@ -1,12 +1,15 @@
 var loginRoute = function (app, passport) {
 
-	app.post('/login', passport.authenticate('local-login', {
-		// successRedirect: '/profile',
-		// failureRedirect: '/login',
-		// failureFlash: true
-	}), function(req, res){
-		console.log(req.user)
-	});
+	app
+		.get('/login', function (req, res) {
+			//TODO: 
+		})
+
+		.post('/login', passport.authenticate('local-login', {
+			//TODO
+		}), function (req, res) {
+			console.log(req.user)
+		});
 
 };
 

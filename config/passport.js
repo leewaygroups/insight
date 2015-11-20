@@ -5,11 +5,11 @@ var User = require('../business/users/user');
 var passportConfig = function (passport) {
 
 	passport.serializeUser(function (user, done) {
-		done(null, user.id);
+		done(null, user._id);
 	});
 
-	passport.deserializeUser(function (id, done) {
-		User.findById(id, function (err, user) {
+	passport.deserializeUser(function (_id, done) {
+		User.findById(_id, function (err, user) {
 			done(err, user);
 		});
 	});
@@ -52,7 +52,7 @@ var localSignUp = function (req, email, password, done) {
 				newUser.local.password = newUser.generateHash(password);
 					 
 				//save new user
-				newUser.save(function (err) {
+				newUser.save(function (err, user) {
 					if (err) {
 						throw err;
 					}
@@ -62,8 +62,6 @@ var localSignUp = function (req, email, password, done) {
 			}
 		});
 	});
-
-	return done(null, "done");
 }
 
 var localLogIn = function (req, email, password, done) {

@@ -1,11 +1,14 @@
-var normaliseReqParam = function(req, res, next){	
+var normaliseReqParam = function (req, res, next) {
+	res.send(req.body);
 	next();
 };
 
 var signup = function (app, passport) {
-	
-	app.post('/signup', normaliseReqParam, passport.authenticate('local-signup'), function(req, res){
-		console.log("Got here paddy!!");
+
+	app.post('/signup', passport.authenticate('local-signup'), function (req, res) {
+
+		
+		
 	});
 
 };
