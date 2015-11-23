@@ -2,16 +2,19 @@ var loginRoute = function (app, passport) {
 
 	app
 		.get('/login', function (req, res) {
-			//TODO: 
+			//vanila get for login page 
 		})
 
-		.post('/login', passport.authenticate('local-login', {
-			//TODO
-		}), function (req, res) {
-			console.log(req.user)
-		});
+		.post('/login', passport.authenticate('local-login'), function (req, res) {
+			req.logIn(req.user, function (err) {
 
+				if (err) {
+					res.status(401);
+				} else {
+					res.status(200).json(req.user);
+				}
+			});
+		});
 };
 
 module.exports = loginRoute;
-

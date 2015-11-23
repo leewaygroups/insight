@@ -1,4 +1,4 @@
-window.app.conferenceApp.controller("app.controller.register", ["$scope", "$rootScope", "$http", registerCtrl]);
+window.app.conferenceApp.controller("app.controller.register", ["$scope", "$rootScope", "$http", "$location", "$state", registerCtrl]);
 
 function registerCtrl($scope, $rootScope, $http, $location, $state) {
 
@@ -21,8 +21,7 @@ function registerCtrl($scope, $rootScope, $http, $location, $state) {
 		$http.post('/signup', user)
 			.then(
 				function (response) {
-					// $state.go('login');
-					$location.url('/login');
+					$state.go('login');
 				},
 				function (error) {
 					console.log(error.status + " : " + error.data);

@@ -30,10 +30,13 @@ window.app.conferenceApp.config(
 				url: '/admin',
 				templateUrl: '/javascripts/app/admin/admin.html',
 				controller: 'app.controller.admin',
-				controllerAs: 'vmAdmin',
-				resolve: {
-					loggedin: app.security.checkAdmin
-				}
+				controllerAs: 'vmAdmin'
+			})
+			.state('user', {
+				url: '/user/:id',
+				templateUrl: '/javascripts/app/user/user.html',
+				controller: 'app.controller.user',
+				controllerAs: 'vmUser'
 			});
 
 		$httpProvider

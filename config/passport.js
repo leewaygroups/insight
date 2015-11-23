@@ -54,7 +54,7 @@ var localSignUp = function (req, email, password, done) {
 				//save new user
 				newUser.save(function (err, user) {
 					if (err) {
-						throw err;
+						return done(null, false, req.flash('signupMessage', 'Oops!, Registration not successful, try again.'));
 					}
 
 					return done(null, newUser);
