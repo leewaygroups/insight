@@ -32,6 +32,7 @@ window.app.conferenceApp.config(
 				controller: 'app.controller.admin',
 				controllerAs: 'vmAdmin'
 			})
+			
 			.state('user', {
 				url: '/user/:id',
 				templateUrl: '/javascripts/app/user/user.html',

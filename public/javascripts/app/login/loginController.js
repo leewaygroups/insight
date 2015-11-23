@@ -12,7 +12,7 @@ function loginCtrl($scope, $rootScope, $http, $state) {
 
                                 var user = response.data;
                                 $rootScope.currentUser = user;
-
+                           
                                 if (user) {
                                         if (user.role.indexOf('admin') !== -1) {
                                                 $state.go('admin');
