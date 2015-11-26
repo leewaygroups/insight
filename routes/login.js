@@ -1,11 +1,11 @@
-var loginRoute = function (app, passport) {
+var loginRoute = function (app, config) {
 
 	app
 		.get('/login', function (req, res) {
 			//vanila get for login page 
 		})
 
-		.post('/login', passport.authenticate('local-login'), function (req, res) {
+		.post('/login', function (req, res) {
 			req.logIn(req.user, function (err) {
 
 				if (err) {
